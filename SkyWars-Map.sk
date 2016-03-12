@@ -1,0 +1,42 @@
+#SkyWarsMapa#
+variables:
+	{spawn.1} = location
+	{spawn.2} = location
+	{spawn.3} = location
+	{spawn.4} = location
+	{spawn.5} = location
+	{spawn.6} = location
+	{spawn.7} = location
+	{spawn.8} = location
+	{spawn.9} = location
+	{spawn.10} = location
+	{spawn.11} = location
+	{spawn.12} = location
+	{spawn.777} = location
+
+command /swrege:
+	permission: skywars.rege
+	permission message: <red>No puedes ejecutar este comando
+	description: <gray>[<gold>SkyWars<gray>] <green> Regenera el mapa una vez que el mapa ha terminado.
+	trigger:
+		execute player command "kickall &7[&aSkyWars&7] &6El juego ha terminado"
+		wait 20 ticks
+		execute console command "/ir reset sk"
+
+command /spawnset [<number>]:
+	description: <red>Esto es para configurar los multiples spawns de <green>SkyWars
+	usage: /spawnset numero
+	trigger:
+		set {spawn.%arg 1%} to location of player
+		send "&7[&6SkyWars&7] &aHas configurado %arg 1% como %{spawn.%arg 1%}%"
+
+command /stp [<number>]:
+	trigger:
+		teleport player to {spawn.%arg 1%}
+
+command /removelobby:
+	trigger:
+		set {_pregame.pos1} to the location at x = -22, y = 186, z = -18 of world "sk"
+		set {_pregame.pos2} to the location at x = 21, y = 212, z = 17 of world "sk"
+		loop blocks within {_pregame.pos1} to {_pregame.pos2}:
+			set loop-block to air

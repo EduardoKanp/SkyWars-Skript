@@ -1,0 +1,113 @@
+command /refill:
+	trigger:
+		set {arena.pos1} to the location at x = 52, y = 133, z = 53 of world "sk"
+		set {arena.pos2} to the location at x = -61, y = 195, z = -58 of world "sk"
+		loop blocks within {arena.pos1} to {arena.pos2}:
+			If loop-block is glass:
+				set loop-block to air
+			If loop-block is chest:
+				add 10 dirt to loop-block
+				set {_chestnumber} to a random integer between 1 and 11
+				send "&fINFO:&e A chest has been populated with set %{_chestnumber}%" to the console
+				If {_chestnumber} is 1:
+					add 5 wood to loop-block
+					add 1 diamond pickaxe to loop-block
+					add 1 enderpearl to loop-block
+					add 23 xp bottle to loop-block
+					add 5 golden apple to loop-block
+					add wooden sword of sharpness 2 to loop-block
+					add 1 diamond sword to loop-block
+					add 1 diamond helmet of fire protection 1 to loop-block
+				If {_chestnumber} is 2:
+					add 10 arrow to loop-block
+					add 1 iron sword to loop-block
+					add 1 enderpearl to loop-block
+					add 23 xp bottle to loop-block
+					add 1 golden apple to loop-block
+					add 1 diamond pickaxe to loop-block
+					add 1 iron axe to loop-block
+					add 1 enderpearl to loop-block
+					add 23 xp bottle to loop-block
+					add 5 golden apple to loop-block
+					add 1 wooden sword of sharpness 2 to loop-block
+					add 1 diamond chestplate of fire protection 1 to loop-block
+				If {_chestnumber} is 3:
+					add 12 arrow to loop-block
+					add 1 slimeball of knockback 10 to loop-block
+					add 1 enderpearl to loop-block
+					add 23 xp bottle to loop-block
+					add 5 golden apple to loop-block
+					add 12 stained hardened clay to loop-block
+					add 1 diamond sword to loop-block
+					add diamond chestplate of fire protection 4 to loop-block
+					add 1 bow of flame 1 to loop-block
+					add 1 diamond sword to loop-block
+					add 1 golden boots of fire protection 4 to loop-block
+				If {_chestnumber} is 4:
+					add 1 ender pearl to loop-block
+					add 23 xp bottle to loop-block
+					add 5 golden apple to loop-block
+					add 12 stained hardened clay to loop-block
+					add 1 ender pearl to loop-block
+					add 16 log to loop-block
+					add 23 xp bottle to loop-block
+					add 1 elytra to loop-block
+					add 5 golden apple to loop-block
+					add 12 stained hardened clay to loop-block
+					add 1 golden helmet of fire protection 4 to loop-block
+				If {_chestnumber} is 5:
+					add 1 lava bucket to loop-block
+					add 8 cooked beef to loop-block
+					add 23 xp bottle to loop-block
+					add 12 stained hardened clay to loop-block
+					add 1 diamond helmet of fire protection to loop-block
+					add 1 golden sword of fire aspect 1 to loop-block
+					add 1 diamond leggings of fire protection 4 to loop-block
+				If {_chestnumber} is 6:
+					add 5 golden apple to loop-block
+					add 12 stained hardened clay to loop-block
+					add 1 wooden sword of sharpness 2 to loop-block
+					add 12 wood to loop-block
+					add 10 arrow  to loop-block
+					add 1 enderpearl to loop-block
+					add 23 xp bottle to loop-block
+					add 5 golden apple to loop-block
+					add 12 stained hardened clay to loop-block
+					add 1 diamond helmet of fire protection 1 to loop-block
+				If {_chestnumber} is 7:
+					add 1 diamond pickaxe to loop-block
+					add 1 iron axe to loop-block
+					add 8 log to loop-block
+					add 1 iron axe to loop-block
+					add 1 enderpearl to loop-block
+					add 1 elytra to loop-block
+					add 23 xp bottle to loop-block
+					add 5 golden apple to loop-block
+					add 1 wooden sword of sharpness 2 to loop-block
+					add 1 diamond sword to loop-block
+					add 12 arrow to loop-block
+					add 1 bow to loop-block
+				If {_chestnumber} is 8:
+					add 1 wooden sword of sharpness 2 to loop-block
+					add 1 diamond sword of fire aspect 1 to loop-block
+					add 12 arrow to loop-block
+					add 10 arrow to loop-block
+					add 1 diamond boots of fire protection 4 to loop-block
+				If {_chestnumber} is 9:
+					add 1 diamond helmet of fire protection 4 to loop-block
+					add 1 stone sword of fire aspect 1 to loop-block
+					add 1 bow of infinity to loop-block
+					add 1 golden boots of fire protection 4 to loop-block
+				If {_chestnumber} is 10:
+					add 1 iron block to loop-block
+					add 1 stick to loop-block
+					add 1 bow of flame 1 to loop-block
+					add 1 arrow to loop-block
+					add 12 arrow to loop-block
+					add 1 elytra to loop-block
+					add 1 diamond sword to loop-block
+				If {_chestnumber} is 11:
+					add 1 diamond sword of sharpness 1 to loop-block
+					add 1 leather chestplate of fire protection 4 to loop-block
+					add 8 log to loop-block
+					add 1 elytra to loop-block

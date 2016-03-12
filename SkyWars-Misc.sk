@@ -1,0 +1,30 @@
+command /countdown:
+	executable by: players
+	trigger:
+		set {time} to 10
+		while {time} is more than 0:
+			set player's level to {time}
+			{time} is 10 or 9 or 8 or 7 or 6:
+				execute console command "/tm msg -fadeout=1 -silent -fadein=1 %player% &cSkyWars <nl> &aplay.batnetwork.pw"
+			remove 1 from {time}
+			{time} is 5 or 4 or 3 or 2 or 1:
+				execute console command "/tm msg -fadeout=1 -silent -fadein=1 %player% &c%{time}% <nl> &ePrepare to fight!"
+				execute player command "/sound BLOCK_NOTE_HAT %player%"
+			wait 1 second
+		set the player's level to 0
+		execute player command "/sound ENTITY_EXPERIENCE_ORB_TOUCH %player%" 
+		loop 10 times:
+			send "&f "
+		send "&6&m=================================================" to player
+		send "&f " to player
+		send "&6                              SkyWars"
+		send "&c                          By: BatNetwork "
+		send "&f "
+		send "&7              Cada jugador aparece en su propia isla y"
+		send "&7             el objetvio es ser el ultimo jugador vivo,"
+		send "&7            mata a todos los jugadores con tus armas."
+		send "&f "
+		send "&6&m================================================="
+		send "&f "
+		show mob spawner flames at player
+

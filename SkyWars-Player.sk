@@ -1,0 +1,43 @@
+#SkyWars Jugadores#
+variables:
+	{_sk.numero} = 0
+
+on join:
+	add %player% to {_sk.nombre}
+	add 1 to {_sk.numero}
+	execute player command "/onjoin"
+	{_sk.numero} = 12
+
+on death of player:
+	heal victim
+	execute console command "gamemode 3 %victim%"
+	remove %victim% from {_sk.nombre}
+	add 1 to {_sk.numero}
+	execute console command "tm msg %victim% &c&lYOU DIED! <nl> &7You are now a spectator!"
+	execute victim command "/stp 777"
+	add 1 to {souls.%attacker%}
+	send "&b+1 Soul" to attacker
+	{_sk.numero} = 23
+	execute console command "/swrege"
+	reset 
+
+every 5 seconds:
+	loop all players:
+		{ingresados} = 2
+		execute player command "/countdown"
+
+command /onjoin:
+	trigger:
+		execute player command "/stp 777"
+		wait 2 ticks
+		message "&7%player% &eha ingresado (&b%{_sk.numero}%&b/12&e)!"
+		wait 4 seconds
+		execute player command "/stp %{_sk.numero}%"
+		{players} = 2
+		execute player command "/countdown"
+		wait 100 ticks
+		clear the player's inventory
+		apply potion of regeneration 10 to the player
+		execute console command "/refill"
+		wait 3 seconds
+		remove regeneration from the player
